@@ -1,4 +1,4 @@
-const startDate = new Date("2024-03-06 13:00:00"); // Substitua pela data e hora de início do namoro
+const startDate = new Date("2024-08-01 00:00:00"); // Substitua pela data e hora de início do namoro
 
 function updateClock() {
     const now = new Date();
