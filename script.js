@@ -1,4 +1,5 @@
 const startDate = new Date("2024-08-01 00:00:00"); // Substitua pela data e hora de início do namoro
+let timer;  // Variável para armazenar o setInterval
 
 function updateClock() {
     const now = new Date();
@@ -13,4 +14,14 @@ function updateClock() {
         `Estamos juntos há: ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
 }
 
-setInterval(updateClock, 1000);
+function pararContador() {
+    clearInterval(timer);  // Para o contador
+    document.getElementById("pararBtn").disabled = true;  // Desabilita o botão após parar
+}
+
+// Inicia o contador
+timer = setInterval(updateClock, 1000);
+
+// Adiciona o evento de parar ao botão
+document.getElementById("pararBtn").addEventListener("click", pararContador);
+
